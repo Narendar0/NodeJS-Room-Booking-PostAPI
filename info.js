@@ -4,7 +4,6 @@ app.use(express.json());
 let customer = [];
 let rooms = [];
 
-
 app.post('/roomdetails',function(req,res){
     rooms.push(req.body);
     
@@ -12,12 +11,6 @@ app.post('/roomdetails',function(req,res){
         message: 'Room details'
     })
     })
-
-app.get('/rooms',function(req,res){
-   
-    res.json(rooms);
-
-})
 
 app.post('/customer_details',function(req,res){
     req.body.id = customer.length + 1;
@@ -42,6 +35,11 @@ app.get('/room_booking_customer',function(req,res){
 
 })
 
+app.get('/rooms',function(req,res){
+   
+    res.json(rooms);
+
+})
 
 
 app.listen(3001);
